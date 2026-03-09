@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Portal · Sign in</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background: #f0f5fb;
+      font-family: 'Calibri', 'Times New Roman', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 1rem;
+    }
+    .login-wrapper {
+      width: 100%;
+      max-width: 460px;
+    }
+    .card-login {
+      border: none;
+      border-radius: 2.5rem;
+      background: #ffffff;
+      box-shadow: 0 20px 40px -10px rgba(0,30,60,0.15);
+      padding: 2.2rem 2rem;
+    }
+    .institute-tag {
+      background: #e7eef9;
+      border-radius: 40px;
+      padding: 0.4rem 1.4rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #1e3c72;
+      letter-spacing: 0.3px;
+    }
+    .heading {
+      color: #1e3c72;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    .input-group-modern {
+      border: 1px solid #dae2ed;
+      border-radius: 10px;
+      background: #f9fcff;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      padding: 0.4rem 1.2rem;
+    }
+    .input-group-modern:focus-within {
+      border-color: #1e3c72;
+      box-shadow: 0 0 0 4px rgba(30,60,114,0.1);
+    }
+    .input-group-modern i {
+      color: #6b8cae;
+      font-size: 1.2rem;
+      width: 2rem;
+      text-align: center;
+    }
+    .input-group-modern .form-control {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      padding: 0.6rem 0.5rem;
+      font-size: 1rem;
+    }
+    .input-group-modern .form-control::placeholder {
+      color: #a6bbd0;
+      font-weight: 300;
+    }
+    .btn-login {
+      background: #1e3c72;
+      border: none;
+      border-radius: 40px;
+      padding: 0.8rem 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: 0.15s;
+    }
+    .btn-login:hover {
+      background: #0f2a4f;
+    }
+    .role-selector {
+      background: #f1f6fd;
+      border-radius: 40px;
+      padding: 0.3rem;
+    }
+    .role-selector .form-check-inline {
+      margin-right: 0;
+      flex: 1;
+    }
+    .role-selector .form-check-input {
+      display: none;
+    }
+    .role-selector .form-check-label {
+      display: block;
+      text-align: center;
+      padding: 0.5rem 0.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #3e5f7e;
+      cursor: default;
+      background: transparent;
+    }
+    .role-selector .form-check-input:checked + .form-check-label {
+      background: white;
+      color: #1e3c72;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-weight: 600;
+    }
+    #roleAdmin:checked ~ * .role-label-admin,
+    #roleUser:checked ~ * .role-label-user {
+      background: white;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .role-selector .form-check-input#roleAdmin:checked + label {
+      background: white;
+      color: #1e3c72;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-weight: 600;
+    }
+    .role-selector .form-check-input#roleUser:checked + label {
+      background: white;
+      color: #1e3c72;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-weight: 600;
+    }
+    .forgot-link {
+      color: #6b85a0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .forgot-link:hover {
+      color: #1e3c72;
+    }
+      border-top: 1px solid #e5ecf5;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="card-login">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <span class="institute-tag"><i class="fas fa-shield-alt me-2"></i>Employee Management System</span>
+    </div>
+
+    <h2 class="heading mb-2"><i class="fas fa-key me-2" style="font-size:1.8rem;"></i>Employee login</h2>
+    <p class="text-secondary mb-4" style="font-size:0.95rem;">Amin Sign in with admin account for manage employees</p>
+
+    <form>
+      <div class="mb-4">
+        <label class="form-label fw-semibold text-secondary small ms-2 mb-1">USERNAME OR EMAIL</label>
+        <div class="input-group-modern">
+          <i class="fas fa-envelope"></i>
+          <input type="email" class="form-control" placeholder="admin@gmail.com" id="email">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label fw-semibold text-secondary small ms-2 mb-1">PASSWORD</label>
+        <div class="input-group-modern">
+          <i class="fas fa-lock"></i>
+          <input type="password" class="form-control" placeholder="••••••••" id="password">
+        </div>
+      </div>
+
+
+      <button type="button" class="btn btn-login w-100 text-white mb-3" onclick="login();">
+        <i class="fas fa-arrow-right-to-bracket me-2"></i> Login
+      </button>
+
+
+    </form>
+
+    <div class="text-center mt-4">
+      <span class="text-secondary small">
+        <i class="far fa-building me-1"></i> Employee Management System v1.0
+      </span>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+  <script src="js/notiflix-aio-3.2.8.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
